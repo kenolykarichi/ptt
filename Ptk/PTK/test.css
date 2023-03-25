@@ -1,0 +1,375 @@
+/*the start of the grid*/
+:root {
+  --dark: #373349;
+  --gap: 15px;
+  --width: 200px;
+  --height: var(--width);
+}
+
+
+.container > a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  overflow: hidden;
+
+}
+
+.container > a::after {
+  content: "";
+  background: linear-gradient(transparent,black);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transform: translateY(100%);
+  transition-duration: .75s;
+}
+
+.container > a:hover::after {
+  transform: translateY(50%);
+}
+
+.container > a > * {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition-duration: 1s;
+}
+
+.container > a:hover > img {
+  transform: scale(1.05);
+}
+
+.container {
+  display: grid;
+  grid-gap: var(--gap);
+  grid-template-columns: repeat(auto-fit, minmax(var(--width), 1fr));
+  grid-auto-rows: var(--height);
+  grid-auto-flow: dense;
+}
+
+.horizontal {
+  grid-column: span 2;
+}
+
+.vertical {
+  grid-row: span 2;
+}
+
+.big {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+
+/*the start of the navbar*/
+
+
+body {
+    position: relative;
+    min-height: 100vh;
+    background-color:;
+    font-family: sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 80px 0;
+    box-sizing: border-box;
+  }
+  
+  nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    top: 0;
+    background-color: #fff;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    padding: 2%;
+    background-color:#fceed1 ;
+  }
+  #ptp{
+    background-color:#e1b382 ;
+  }
+  
+  .nav-item {
+    flex-grow: 1;
+    max-width: 100%;
+    padding: 8px 0;
+    color: #666;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.2s;
+  }
+  
+  .nav-item.highlight{
+    background-color: limegreen;
+    color: #fff;
+    margin: 0 8px;
+    transform: translatey(8px);
+    border-radius: 4px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  .nav-item .feather{
+    margin-bottom: 4px;
+  }
+  
+  .nav-item.highlight .feather{
+    stroke: #fff;
+  }
+  
+  a:hover .feather * {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    animation: icon-draw 1s ease-in-out forwards;
+  }
+  
+  .nav-item span {
+    display: block;
+    margin: 0 auto;
+    padding: 0 4px;
+    font-size: 0.8em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 15vw;
+  }
+  
+  nav:hover .nav-item:not(:hover):not(.highlight) {
+    opacity: 0.33;
+  }
+  
+  /* ------------------------ Icons ------------------------ */
+  
+  .feather {
+    width: 24px;
+    height: 24px;
+    stroke: limegreen;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+  }
+  
+  @keyframes icon-draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+
+
+  #formm {
+    width: 10%;
+    height: 10%;
+    z-index: 300;
+
+  }
+  input {
+    padding: 8%;
+    margin-bottom: 2%;
+  }
+
+
+
+
+
+
+  
+.right_conatct_social_icon{
+  background: linear-gradient(to top right, #1325e8 -5%, #8f10b7 100%);
+}
+.contact_us{
+ background-color: #f1f1f1;
+ padding: 120px 0px;
+}
+
+.contact_inner{
+ background-color: #fff;
+ position: relative;
+ box-shadow: 20px 22px 44px #cccc;
+ border-radius: 25px;
+}
+.contact_field{
+ padding: 60px 340px 90px 100px;
+}
+.right_conatct_social_icon{
+ height: 100%;
+}
+
+.contact_field h3{
+color: #000;
+ font-size: 40px;
+ letter-spacing: 1px;
+ font-weight: 600;
+ margin-bottom: 10px
+}
+.contact_field p{
+ color: #000;
+ font-size: 13px;
+ font-weight: 400;
+ letter-spacing: 1px;
+ margin-bottom: 35px;
+}
+.contact_field .form-control{
+ border-radius: 0px;
+ border: none;
+ border-bottom: 1px solid #ccc;
+}
+.contact_field .form-control:focus{
+ box-shadow: none;
+ outline: none;
+ border-bottom: 2px solid #1325e8;
+}
+.contact_field .form-control::placeholder{
+ font-size: 13px;
+ letter-spacing: 1px;
+}
+
+.contact_info_sec {
+ position: absolute;
+ background-color: #2d2d2d;
+ right: 1px;
+ top: 18%;
+ height: 340px;
+ width: 20%;
+ padding: 40px;
+ border-radius: 25px 0 0 25px;
+}
+.contact_info_sec h4{
+ letter-spacing: 1px;
+ padding-bottom: 15px;
+}
+
+.info_single{
+ margin: 30px 0px;
+}
+.info_single i{
+ margin-right: 15px;
+}
+.info_single span{
+ font-size: 14px;
+ letter-spacing: 1px;
+}  
+
+button.contact_form_submit {
+ background: linear-gradient(to top right, #1325e8 -5%, #8f10b7 100%);
+ border: none;
+ color: #fff;
+ padding: 10px 15px;
+ width: 100%;
+ margin-top: 25px;
+ border-radius: 35px;
+ cursor: pointer;
+ font-size: 14px;
+ letter-spacing: 2px;
+}
+.socil_item_inner li{
+ list-style: none;
+}
+.socil_item_inner li a{
+ color: #fff;
+ margin: 0px 15px;
+ font-size: 14px;
+}
+.socil_item_inner{
+ padding-bottom: 10px;
+}
+
+.map_sec{
+ padding: 50px 0px;
+}
+.map_inner h4, .map_inner p{
+ color: #000;
+ text-align: center
+}
+.map_inner p{
+ font-size: 13px;
+}
+.map_bind{
+margin-top: 50px;
+ border-radius: 30px;
+ overflow: hidden;
+}
+
+
+
+
+
+h1.redesSociais {
+display: none;
+}
+
+ul.redesSociais {
+padding-left: 0;
+width: 620px;
+height: 100px;
+position: relative;
+margin-bottom: 0%;
+margin-left: 20%;
+cursor: pointer;
+}
+
+ul.redesSociais li {
+list-style-position: inside;
+display: block;
+position: absolute;
+right: 50%;
+margin-bottom: 0%;
+transition: all 500ms;
+}
+
+/*Sem Mouse*/
+ul.redesSociais li.pinterest {
+transform: scale(0.5);
+margin-right: -10px;
+z-index:0;
+}
+ul.redesSociais li.facebook {
+transform: scale(0.5);
+margin-right: -30px;
+z-index:1;
+}
+ul.redesSociais li.twitter {
+transform: scale(0.5);
+margin-right: -50px;
+z-index:2;
+}
+ul.redesSociais li.googleplus {
+transform: scale(0.5);
+margin-right: -70px;
+z-index:1;
+}
+ul.redesSociais li.skype {
+transform: scale(0.5);
+margin-right: -90px;
+z-index:0;
+}
+
+/*Com Mouse*/
+ul.redesSociais:hover li.pinterest {
+margin-right: 190px;
+}
+ul.redesSociais:hover li.facebook {
+margin-right: 70px;
+}
+ul.redesSociais:hover li.twitter {
+margin-right: -50px;
+}
+ul.redesSociais:hover li.googleplus {
+margin-right: -170px;
+}
+ul.redesSociais:hover li.skype {
+margin-right: -290px;
+}
+
+
+#contactbody {
+  background-image:;
+}
